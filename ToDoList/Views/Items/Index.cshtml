@@ -8,9 +8,9 @@
 <h1>Items</h1>
 
 <ul>
-  @foreach(Item item in Model)
+  @foreach(Item item in ViewBag.DueDate)
   {
-    <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId })</li>
+    <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId }) | @item.DueDate</li>
   }
 </ul>
 

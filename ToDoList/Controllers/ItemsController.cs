@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,8 @@ namespace ToDoList.Controllers
 
         public ActionResult Index()
         {
+            List<Item> newModel = _db.Items.ToList();
+            ViewBag.DueDate = newModel.OrderBy(item => item.DueDate);
             return View(_db.Items.ToList());
         }
 

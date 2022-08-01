@@ -41,6 +41,13 @@ namespace ToDoList.Controllers
                 .Include(category => category.JoinEntities)
                 .ThenInclude(join => join.Item)
                 .FirstOrDefault(category => category.CategoryId == id);
+      // var listOfDueDates = _db.Items
+      //     .Include(item => item.JoinEntities)
+      //     .ThenInclude(join => join.Item)
+      //     .ThenInclude(join => join.DueDate);
+          
+      // ViewBag.DueDate = listOfDueDates.OrderBy(item => item.DueDate);
+
             return View(thisCategory);
     }
 

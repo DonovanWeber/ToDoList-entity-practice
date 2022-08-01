@@ -21,6 +21,10 @@ else
     <li>@join.Item.Description</li>
   }
   </ul>
+  @* @foreach(var due in ViewBag.DueDate)
+  {
+    <li>@due.Item.Description</li>
+  } *@
 }
 
 <p>@Html.ActionLink("Back to categories", "Index")</p>
