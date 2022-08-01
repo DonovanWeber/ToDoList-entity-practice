@@ -18,9 +18,12 @@ else
   @foreach(var join in Model.JoinEntities)
   {
     <li>@join.Category.Name</li>
+    <li>@join.Item.DueDate</li>
   }
   </ul>
 }
+Completed: @Html.RadioButtonFor(model => model.Completed, "True")
+Uncompleted: @Html.RadioButtonFor(model => model.Completed, "False")
 <ul>
       @foreach (var join in Model.JoinEntities)
       {
@@ -31,6 +34,7 @@ else
       <input type="submit" value="Delete" />
         }
       }
+
 </ul>
 <p>@Html.ActionLink("Add a Category", "AddCategory", new { id = Model.ItemId })</p>
 <p>@Html.ActionLink("Edit Item", "Edit", new { id = Model.ItemId })</p>

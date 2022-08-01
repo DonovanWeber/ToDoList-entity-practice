@@ -11,8 +11,17 @@
   @Html.TextBoxFor(model => model.Description)
 
   @Html.LabelFor(model => model.DueDate)
-  @Html.TextBoxFor(model => model.DueDate)
-  @Html.EditorFor(model => model.News_Date, new object{ id = "duedate" })
+  @* @Html.TextBoxFor(model => model.DueDate) *@
+  @Html.EditorFor(model => model.DueDate, new { htmlAttributes = new {@class = "datepicker"}})
+  <script>
+      $(document).ready(function () {
+        $(".datepicker").datepicker({
+          dateFormat: "dd-mm-yy",
+          changemonth: true,
+          changeyear: true
+        });
+      });
+  </script>
 
   @Html.Label("Select category")
   @Html.DropDownList("CategoryId")
